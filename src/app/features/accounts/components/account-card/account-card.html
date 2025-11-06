@@ -1,0 +1,15 @@
+<div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer">
+  <div class="flex justify-between items-center">
+    <span class="font-semibold"> {{ labels[account.accountType] }}</span>
+  </div>
+
+  <div class="mt-2 text-2xl font-bold">{{ formattedBalance() }}</div>
+
+  <div class="mt-1 text-gray-400 text-sm">
+    <span *ngIf="account.accountType === 'CORRENTE'">
+      Limite: {{ account.creditLimit | currency : 'BRL' }}
+    </span>
+
+    <span *ngIf="account.accountType === 'POUPANCA'"> Meta: {{ account.goalDescription }} </span>
+  </div>
+</div>

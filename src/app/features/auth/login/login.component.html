@@ -1,0 +1,30 @@
+<div class="flex items-center justify-center min-h-screen bg-slate-50">
+  <div class="w-full max-w-md p-6 bg-white rounded shadow">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Entrar</h2>
+
+    <form (ngSubmit)="login()">
+      <label class="block mb-2">E-mail</label>
+      <input [(ngModel)]="email" name="email" required class="w-full p-2 mb-3 border rounded" />
+
+      <label class="block mb-2">Senha</label>
+      <input
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+        required
+        class="w-full p-2 mb-4 border rounded"
+      />
+
+      <div *ngIf="error()" class="text-red-600 mb-3">{{ error() }}</div>
+
+      <button
+        type="submit"
+        [disabled]="loading()"
+        class="w-full p-2 bg-blue-600 text-white rounded"
+      >
+        <span *ngIf="!loading()">Entrar</span>
+        <span *ngIf="loading()">Carregando...</span>
+      </button>
+    </form>
+  </div>
+</div>
