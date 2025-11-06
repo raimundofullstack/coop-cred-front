@@ -4,20 +4,21 @@ CoopCred Front-end é a interface web moderna do sistema de cooperativa de créd
 O projeto se integra ao back-end [Coop Cred](https://github.com/raimundofullstack/coop-cred) (Node.js + MongoDB), responsável pela autenticação JWT, gerenciamento de contas e transações financeiras, presente em meu repositório.
 Este repositório foca na experiência do usuário, incluindo autenticação, dashboard interativo e gerenciamento de contas (corrente e poupança).
 
-# 🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=for-the-badge&logo=reactivex&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-0EA5E9?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
-# 🧩 Estrutura do Projeto
+## 🧩 Estrutura do Projeto
 
 ```
 src/
@@ -36,16 +37,16 @@ src/
  └─ environments/                 # Configurações de ambiente
 ```
 
-# 💡 Funcionalidades
+## 💡 Funcionalidades
 
-✅ Login de usuário, com validações e loading
-✅ Dashboard com listagem de contas
-✅ Criação de nova conta poupança com objetivo (modal interativo)
-✅ Atualização automática da lista após criação
-✅ Logout funcional e redirecionamento para tela de login
-✅ Integração com backend Node.js / MongoDB
+- ✅ Login de usuário, com validações e loading
+- ✅ Dashboard com listagem de contas
+- ✅ Criação de nova conta poupança com objetivo (modal interativo)
+- ✅ Atualização automática da lista após criação
+- ✅ Logout funcional e redirecionamento para tela de login
+- ✅ Integração com backend Node.js / MongoDB
 
-# 🧱 Como Rodar o Projeto
+## 🧱 Como Rodar o Projeto
 
 ```
 # Instalar dependências
@@ -59,7 +60,7 @@ http://localhost:4200
 
 ```
 
-# 🧭 Próximos Passos
+## 🧭 Próximos Passos
 
 - Prioridade: Tela de cadastro de novos usuários
 - Criar página de detalhes da conta(com as ultimas movimentações)
