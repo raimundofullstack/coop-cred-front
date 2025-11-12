@@ -1,0 +1,61 @@
+<div class="flex items-center justify-center min-h-screen bg-slate-200">
+  <div class="w-full max-w-md p-6 bg-white rounded shadow">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Criar conta</h2>
+
+    <form (ngSubmit)="register()">
+      <label class="block mb-2">Nome completo</label>
+      <input
+        [(ngModel)]="name"
+        name="name"
+        required
+        class="w-full p-2 mb-3 border rounded"
+        placeholder="Seu nome"
+      />
+
+      <label class="block mb-2">E-mail</label>
+      <input
+        [(ngModel)]="email"
+        name="email"
+        type="email"
+        required
+        class="w-full p-2 mb-3 border rounded"
+        placeholder="seu@email.com"
+      />
+
+      <label class="block mb-2">Senha</label>
+      <input
+        [(ngModel)]="password"
+        name="password"
+        type="password"
+        required
+        class="w-full p-2 mb-3 border rounded"
+        placeholder="Digite sua senha"
+      />
+
+      <label class="block mb-2">Confirmar senha</label>
+      <input
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        type="password"
+        required
+        class="w-full p-2 mb-4 border rounded"
+        placeholder="Confirme sua senha"
+      />
+
+      <div *ngIf="error()" class="text-red-600 mb-3 text-center">{{ error() }}</div>
+
+      <button
+        type="submit"
+        [disabled]="loading()"
+        class="w-full p-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      >
+        <span *ngIf="!loading()">Criar conta</span>
+        <span *ngIf="loading()">Criando...</span>
+      </button>
+      <p class="text-center text-sm mt-4">
+        Já tem conta?
+        <a (click)="backToLogin()" class="text-blue-600 cursor-pointer hover:underline">Entrar</a>
+      </p>
+    </form>
+  </div>
+</div>

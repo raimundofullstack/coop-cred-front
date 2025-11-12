@@ -1,7 +1,9 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, Input, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 export interface AccountCardModel {
+  _id: string;
   accountType: 'CORRENTE' | 'POUPANCA';
   balance: number;
   creditLimit: number;
@@ -18,6 +20,7 @@ export interface AccountCardModel {
 })
 export class AccountCardComponent {
   @Input() account!: AccountCardModel;
+  private router = inject(Router);
 
   readonly formattedBalance = signal('0,00');
   readonly labels = {
@@ -31,5 +34,8 @@ export class AccountCardComponent {
         this.account.balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
       );
     }
+  }
+  viewTransactions(id: string) {
+    this.router.navigate(['/transactions', id]);
   }
 }

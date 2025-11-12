@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccountCardComponent, AccountCardModel } from '../account-card/account-card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-list',
@@ -11,5 +12,10 @@ import { AccountCardComponent, AccountCardModel } from '../account-card/account-
 })
 export class AccountListComponent {
   @Input() accounts: AccountCardModel[] = [];
+  private router = inject(Router);
+
+  viewTransactions(id: string) {
+    this.router.navigate(['/transactions', id]);
+  }
 }
 export type { AccountCardModel };

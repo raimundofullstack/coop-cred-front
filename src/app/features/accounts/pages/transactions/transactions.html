@@ -1,0 +1,48 @@
+<div class="p-6">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold text-gray-800">Extrato da Conta</h1>
+    <button
+      (click)="goBack()"
+      class="px-4 py-2 text-sm text-gray-700 border rounded hover:bg-gray-100 transition"
+    >
+      ← Voltar
+    </button>
+  </div>
+
+  <div *ngIf="loading()" class="text-gray-500 text-center py-10">Carregando transações...</div>
+
+  <div *ngIf="!loading() && transactions().length === 0" class="text-center text-gray-500">
+    Nenhuma transação encontrada.
+  </div>
+
+  <div *ngIf="!loading() && transactions().length > 0" class="space-y-4">
+    <div
+      *ngFor="let tx of transactions()"
+      class="p-4 border rounded-lg shadow-sm hover:shadow-md transition"
+    >
+      <div class="flex justify-between">
+        <span class="font-semibold text-gray-800">{{ tx.type }}</span>
+        <span
+          class="font-mono"
+          [class.text-green-600]="tx.type === 'DEPOSITO'"
+          [class.text-red-600]="tx.type === 'SAQUE'"
+          [class.text-blue-600]="tx.type === 'TRANSFERENCIA'"
+        >
+          {{ tx.amount | currency : 'BRL' : 'symbol' }}
+        </span>
+      </div>
+      <p class="text-sm text-gray-500 mt-1">
+        {{ tx.createdAt | date : 'short' }}
+      </p>
+
+      <div *ngIf="tx.fromAccount || tx.toAccount" class="text-xs text-gray-400 mt-1">
+        <ng-container *ngIf="tx.fromAccount">
+          De: {{ tx.fromAccount.accountType }} ({{ tx.fromAccount._id }})
+        </ng-container>
+        <ng-container *ngIf="tx.toAccount">
+          <br />Para: {{ tx.toAccount.accountType }} ({{ tx.toAccount._id }})
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -39,8 +39,9 @@ src/
 
 ## 💡 Funcionalidades
 
-- ✅ Login de usuário, com validações e loading
+- ✅ Login de usuário, Criação de usuário, com validações e loading
 - ✅ Dashboard com listagem de contas
+- ✅ Extrato individual de cada conta
 - ✅ Criação de nova conta poupança com objetivo (modal interativo)
 - ✅ Atualização automática da lista após criação
 - ✅ Logout funcional e redirecionamento para tela de login
@@ -62,8 +63,6 @@ http://localhost:4200
 
 ## 🧭 Próximos Passos
 
-- Prioridade: Tela de cadastro de novos usuários
-- Criar página de detalhes da conta(com as ultimas movimentações)
 - Permitir realizar "depositos", "saques" e "transferencias"
 - Adicionar dashboard financeiro com gráficos (saldo, metas, etc.)
 - Adicionar tema escuro (dark mode)

@@ -1,4 +1,7 @@
-<div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer">
+<div
+  class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+  (click)="viewTransactions(account._id)"
+>
   <div class="flex justify-between items-center">
     <span class="font-semibold"> {{ labels[account.accountType] }}</span>
   </div>

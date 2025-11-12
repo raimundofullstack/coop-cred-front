@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  templateUrl: './login.html',
+  styleUrls: ['./login.scss'],
 })
-export class LoginComponent {
+export class LoginPage {
   email = signal('');
   password = signal('');
   private auth = inject(AuthService);
@@ -36,5 +36,8 @@ export class LoginComponent {
         this.loading.set(false);
       },
     });
+  }
+  goToRegister() {
+    this.router.navigate(['/auth/register']);
   }
 }
